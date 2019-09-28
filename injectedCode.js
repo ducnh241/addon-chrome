@@ -1,15 +1,15 @@
 log = function() {
-    for(i = 0; i < document.links.length; i++) console.debug(document.links[i]);
+    for(i = 0; i < document.anchors.length; i++) console.debug(document.anchors[i]);
 }
 
 highlight = function() {
-    var links = document.querySelectorAll('#categories ul li a');
-    console.log(links[0]);
-    var length=links.length>10 ? 10 : links.length;
-    for(var i = 0; i < length; i++) {
-    	// alert(i);
-    	links[i].style.backgroundColor = '#F00';
-    }
+    var anchors = document.querySelectorAll('.list-items .list-item .product-img a');
+    var hrefs = [];
+	for(var i=0; i < anchors.length; i++){
+	  if(1/* add filtering here*/)
+	    hrefs.push(anchors[i].href);
+	}
+	alert(hrefs.join("\n"));
 }
 
 log();
