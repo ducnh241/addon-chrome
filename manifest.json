@@ -1,0 +1,13 @@
+{
+  "name": "Testing from a PopUp",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "<all_urls>"
+  ],
+  "browser_action": {
+      "default_title": "Inject Test Script",
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version":2
+}
