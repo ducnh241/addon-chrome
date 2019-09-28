@@ -7,9 +7,16 @@ highlight = function() {
     var hrefs = [];
 	for(var i=0; i < anchors.length; i++){
 	  if(1/* add filtering here*/)
-	    hrefs.push(anchors[i].href);
+	    hrefs.push(replaceAbc(anchors[i].href));
 	}
-	alert(hrefs.join("\n"));
+	console.log(hrefs.join("\n"));
+	document.getElementById('root').innerHTML ="<p style='width:100%;padding:100px'>" + hrefs.join("<br>") + "</p>";
+}
+
+function replaceAbc(text){
+	var fixed;
+	    fixed = text.replace(/\.html\?[\&,a-z0-9_=-]+/g, '.html');
+	return fixed;
 }
 
 log();
